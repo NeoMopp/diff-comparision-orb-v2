@@ -1,13 +1,27 @@
 description: >
-  Sample example description.
+  A simple circleCI orb based off the circleCI orb initalisation command line.
+  Aim, to help better understand how orbs works and to act as a POC for something better.
+  Presently just does hello world :(
 # Provide a use-case based example for using this orb.
 # Everything in the `usage` section will be displayed in the orb registry.
 # Comments are not retained.
 usage:
   version: 2.1
   orbs:
-    <orb-name>: <namespace>/<orb-name>@1.2.3
+    diff-comparision-orb-v2: neomopp/diff-comparision-orb-v2@1.0.0
+
+  jobs:
+    execution_test:
+      machine: true
+      steps:
+        - attach_workspace:
+            at: .
+        - diff-comparision-orb-v2/greet:
+            to: 'execution'
   workflows:
-    use-my-orb:
+    version: 2
+    workflow:
       jobs:
-        - <orb-name>/<job-name>
+        - diff-comparision-orb-v2/hello:
+            to: world
+        - execution_test
