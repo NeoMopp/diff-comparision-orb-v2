@@ -11,5 +11,8 @@ parameters:
     default: "World"
     description: "Hello to whom?"
 steps:
+  - run:
+      name: check something
+      command: ls -lrt
   - greet:
       to: << parameters.to >>
