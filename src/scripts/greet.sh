@@ -1,5 +1,5 @@
 Greet() {
-    echo Hello "${PARAM_TO}", looking fine!
+    echo Hello "${PARAM_TO}" looking fine
 }
 
 # Will not run if sourced for bats-core tests.
