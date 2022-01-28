@@ -11,8 +11,9 @@ parameters:
     default: "World"
     description: "Hello to whom?"
 steps:
+  - checkout
   - run:
-      name: check something
-      command: ls -lrt
+      name: try running an npm test
+      command: npm run test
   - greet:
       to: << parameters.to >>
