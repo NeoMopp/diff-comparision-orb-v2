@@ -1,4 +1,4 @@
 description: >
   Uses a fixed version of machine
 machine:
-  - image: ubuntu-2004:202010-01
+  image: 'ubuntu-2004:202010-01'
